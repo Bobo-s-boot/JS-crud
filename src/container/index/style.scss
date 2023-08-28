@@ -37,6 +37,16 @@
     border: 1px solid s.color('light');
     padding: s.space(2);
     border-radius: 20px;
+    background-color: blue;
+    color: white;
+  }
+
+  &__buttonProduct {
+    border: 1px solid s.color('light');
+    padding: s.space(2);
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
   }
 }
 
@@ -52,4 +62,20 @@ main {
     padding-top: 5px;
     padding-bottom: 5px;
   }
+}
+
+.form__lableLittle {
+  font-size: x-small;
+  color: grey;
+}
+
+.price-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__inputProduct {
+  border: 1px solid s.color('light');
+  padding: s.space(1);
+  width: 450px;
 }
