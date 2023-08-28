@@ -108,6 +108,58 @@
       </form>
     </div>
   </section>
+
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Інформація про товар</h1>
+      <form method='POST' action='/user-update'>
+        <div class='form__content'>
+          <div class='price-name'>
+            <div class='nameProduct'>
+              <label
+                for='productName'
+                class='form__label'
+              >Назва товару</label>
+              <input
+                type='productName'
+                name='productName'
+                class='form__inputProduct'
+              />
+            </div>
+
+            <div class='Price'>
+              <label
+                for='price'
+                class='form__label'
+              >Ціна</label>
+              <input
+                type='price'
+                name='price'
+                class='form__inputProduct'
+              />
+            </div>
+          </div>
+
+          <div class='form__field'>
+            <label
+              for='password'
+              class='form__label'
+            >Короткий опис товару</label>
+            <input
+              type='description'
+              name='description'
+              class='form__input'
+            />
+            <label
+              for='text'
+              class='form__lableLittle'
+            >Відображається у картці товару</label>
+          </div>
+          <button class='form__buttonProduct'>Створити товар</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>
 
 {{! 

@@ -30,6 +30,15 @@
   border: 1px solid #ddd;
   padding: 8px;
   border-radius: 20px;
+  background-color: blue;
+  color: white;
+}
+.form__buttonProduct {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
 }
 
 main {
@@ -42,6 +51,22 @@ main {
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.form__lableLittle {
+  font-size: x-small;
+  color: grey;
+}
+
+.price-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__inputProduct {
+  border: 1px solid #ddd;
+  padding: 4px;
+  width: 450px;
 }
 
 /*# sourceMappingURL=style.css.map */
