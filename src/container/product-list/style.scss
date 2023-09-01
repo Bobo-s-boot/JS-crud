@@ -1,0 +1,52 @@
+@use '../../lib/service.scss' as s;
+
+.product {
+  display: flex;
+  flex-direction: row;
+  padding: s.space(4);
+  gap: s.space(8);
+  justify-content: space-around;
+
+  &__title {
+    font-size: 25px;
+    color: blue;
+    text-shadow: #fc0 1px 3px 10px;
+    padding-left: s.space(4);
+  }
+
+  &-TitleProduct {
+    font-size: larger;
+    font-weight: 800;
+  }
+
+  &-Cards {
+    width: 350px;
+    height: 160px;
+    background: #fff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  &-Block {
+    display: grid;
+    gap: s.space(5);
+    padding: 5px;
+  }
+
+  &-UI-Info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-Price {
+    font-weight: 700;
+  }
+
+  &-link {
+    text-decoration: none;
+  }
+}
+
+.product-link:hover {
+  opacity: 0.7;
+}

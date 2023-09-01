@@ -1,0 +1,91 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<main>
+
+  <section>
+    <div class='edit'>
+      <h1 class='edit-liderTitle'>Редагування товару</h1>
+      <form method='POST' action='/product-edit'>
+        <div class='edit-card'>
+          <h2 class='edit-title'>Інформація про товар</h2>
+          <div class='edit-inputs'>
+            <div class='edit-group'>
+              <label for='name' class='edit-labels'>Назва
+                товару</label>
+              <input
+                type='text'
+                name='name'
+                class='edit-input'
+              />
+            </div>
+
+            <div class='edit-group'>
+              <label
+                for='price'
+                class='edit-labels'
+              >Ціна</label>
+              <input
+                type='number'
+                name='price'
+                class='edit-input'
+              />
+            </div>
+
+            <div class='edit-group'>
+              <label for='ID' class='edit-labels'>ID</label>
+              <input
+                type='number'
+                name='id'
+                class='edit-input'
+              />
+            </div>
+          </div>
+
+          <div class='edit-group-description'>
+            <label
+              for='description'
+              class='edit-labels'
+            >Коротокий опис товару</label>
+            <input
+              type='text'
+              name='description'
+              class='edit-input-description'
+            />
+            <label
+              for='description'
+              class='edit-labels'
+            >Відображається у картці товару
+            </label>
+
+            <div class='edit-buttons'>
+
+              <a href='/product-infoList'>
+                <button class='edit-seveButton'>Зберегти
+                  оновлення</button>
+              </a>
+
+              <a href='/product-delete?id={{product.id}}'>
+                <button
+                  class='edit-deleteButton'
+                  type='button'
+                >Видалити товар
+                </button>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
