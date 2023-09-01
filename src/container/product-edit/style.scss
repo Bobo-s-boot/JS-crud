@@ -1,0 +1,100 @@
+@use '../../lib/service.scss' as s;
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  padding: s.space(4);
+  gap: s.space(8);
+
+  &-liderTitle {
+    font-size: x-large;
+    font-weight: 600;
+    color: blue;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  &-card {
+    width: max-content;
+    height: max-content;
+    background: #fff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  &-input {
+    border: 1px solid s.color('light');
+    padding: s.space(1);
+    padding-right: 100px;
+  }
+
+  &-group {
+    display: grid;
+    gap: 5px;
+  }
+
+  &-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: s.space(5);
+    margin: s.space(3);
+  }
+
+  &-labels {
+    font-size: smaller;
+    color: gray;
+  }
+
+  &-input-description {
+    border: 1px solid s.color('light');
+    padding: s.space(4);
+  }
+
+  &-group-description {
+    display: grid;
+    gap: 5px;
+    margin: s.space(3);
+  }
+
+  &-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &-deleteButton {
+    color: white;
+    background-color: red;
+    padding: 10px 170px 10px 170px;
+    border-radius: 5px;
+    margin: s.space(3);
+    text-decoration: none;
+  }
+
+  &-seveButton {
+    color: white;
+    background-color: blue;
+    padding: 10px 170px 10px 170px;
+    border-radius: 5px;
+    margin: s.space(3);
+    text-decoration: none;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.edit-seveButton:hover {
+  opacity: 0.7;
+}
+
+.edit-deleteButton:hover {
+  opacity: 0.7;
+}

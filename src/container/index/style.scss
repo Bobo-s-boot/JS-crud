@@ -48,6 +48,11 @@
     background-color: blue;
     color: white;
   }
+
+  &__inputProductDescription {
+    border: 1px solid s.color('light');
+    padding: s.space(6);
+  }
 }
 
 main {
@@ -78,4 +83,9 @@ main {
   border: 1px solid s.color('light');
   padding: s.space(1);
   width: 450px;
+}
+
+.priceInputs {
+  display: grid;
+  gap: 5px;
 }

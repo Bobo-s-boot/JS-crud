@@ -1,0 +1,33 @@
+@use '../../lib/service.scss' as s;
+
+.productPage {
+  display: flex;
+  flex-direction: column;
+  padding: s.space(4);
+  gap: s.space(8);
+  font-weight: 900;
+  font-size: s.space(4);
+}
+
+.productLabel {
+  color: gray;
+  font-size: s.space(3);
+  flex-direction: column;
+  margin-left: 17px;
+}
+
+.buttonProductPage {
+  color: white;
+  font-size: s.space(4);
+  padding: 8px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: blue;
+  margin-top: s.space(5);
+}
+
+.productblock {
+  display: flex;
+  gap: s.space(20);
+  margin-left: 18px;
+}
