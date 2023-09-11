@@ -1,0 +1,55 @@
+
+<main class='main'>
+  {{#with data}}
+    <form
+      method='POST'
+      action="/purchase-submit?id={{id}}"
+      class='form-card'
+    >
+      {{>heading title="You order"}}
+
+      <ul class="cart">
+        {{#each cart}}
+          <li class="cart__item">
+            <span>{{text}}</span>
+            <span>{{price}} grn</span>
+          </li>
+        {{/each}}
+      </ul>
+
+     {{>divider}}
+
+     {{>heading title="Form order"}}
+
+     {{>field label="Name" name="firstname"}}
+
+     {{>field label="Lastname" name="lastname"}}
+
+     {{>field label="Phone" name="phone"}}
+
+     {{>field label="Email" name="email"}}
+
+     {{>field label="Comment" name="comment"}}
+
+     {{>field label="Use bonus" name="bonus"}}
+
+     {{>field label="Promocode" name="promocode"}}
+
+     {{>divider}}
+
+      {{>field value=totalPrice name="totalPrice" disabled=true}}
+      {{>field value=productPrice name="productPrice" disabled=true}}
+      {{>field value=deliveryPrice name="deliveryPrice" disabled=true}}
+      {{>field value=amount name="amount" disabled=true}}
+
+      <strong class="form-card__total">
+        Sum: {{totalPrice}} grn ({{bonus}} grn bonus)
+      </strong>
+
+      {{>button text="Form order"}}
+      
+    </form>
+  {{/with}}
+
+</main>
+

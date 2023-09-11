@@ -4,10 +4,10 @@
  }}
 
 <main class="main">
-   {{> heading title= "Other product" info= "Computer and laptop"}}
+   {{> heading title= "Info about product" info= "Computer and laptop"}}
 
   {{#with data.product}}
-  <form method="POST" action="/purchase-create?{{id}}">
+  <form method="POST" action="/purchase-create?id={{id}}">
     <div class="product-info">
 
 
@@ -23,13 +23,15 @@
 
       {{>divider}}
 
-      {{>field label= "amount" type="number" name="amount" value="1"}}
+      {{>field label="amount" type="number" name="amount" value="1"}}
 
-      <button href="/purchase-product?id={{id}}" class="product-info__button">By now</button>
+      <button class="product-info__button">By now:{{price}} grn</button>
 
     </div>
   </form>
   {{/with}}
+
+  {{> heading title= "Other product" info= "Computer and laptop"}}
 
   <div class="product-list">
     {{#each data.list}}

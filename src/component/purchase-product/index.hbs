@@ -13,11 +13,8 @@
         class='product-card__category product-card__category--{{id}}'
       >{{text}}</span>
     {{/each}}
-    <a href='/purchase-product?id={{id}}'><button
-        type='button'
-        class='product-card__button'
-      >Buy now:
-        {{price}}
-        UA</button></a>
+    <a href='/purchase-product?id={{id}}'>
+     {{>button text="Buy now" price=price}}
+    </a>
   </div>
 {{/with}}

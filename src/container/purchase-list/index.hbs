@@ -3,14 +3,21 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 
-<div class='card'>
-  <div class='card__header'>
-    <h2 class='card__title'>{{data.message}}</h2>
-    <h3 class='card__subtitle'>{{data.info}}</h3>
-  </div>
-  <a href='{{data.link}}' class='card__button'>Return back</a>
-</div>
+<main class="main">
+   {{> heading title= "My orders"}}
 
+  {{#with data}}
+  <form method="POST" action="/purchase-list?id={{id}}">
+    <div class="product-cart">
+    <p>ID:{{id}}</p>
+    {{>divider}}
+
+    
+    </div>
+  </form>
+  {{/with}}
+
+</main>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
