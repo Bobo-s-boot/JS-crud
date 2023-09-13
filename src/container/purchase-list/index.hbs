@@ -3,20 +3,31 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 
-<main class="main">
-   {{> heading title= "My orders"}}
-
-  {{#with data}}
-  <form method="POST" action="/purchase-list?id={{id}}">
-    <div class="product-cart">
-    <p>ID:{{id}}</p>
-    {{>divider}}
-
-    
-    </div>
-  </form>
-  {{/with}}
-
+<main class='main'>
+  {{> heading title="You orders"}}
+  <div class='purchase-list'>
+    {{#with data.purchases}} {{#each list}}
+    <a href='/purchase-product-info?id={{id}}'>
+      <div class='purchase-item'>
+        <div class='purchase-item__block'>
+          <span class='title'>ID: {{id}}</span>
+        </div>
+        <div class='purchase-item__block'>
+          <span class='title'>Товари:</span>
+          <span class='text'>{{product}}</span>
+        </div>
+        <div class='purchase-item__block'>
+          <span class='title'>Сума замовлення:</span>
+          <span class='text'>{{totalPrice}} грн</span>
+        </div>
+        <div class='purchase-item__block'>
+          <span class='title'>Нараховані бонуси:</span>
+          <span class='text'>{{bonus}} грн</span>
+        </div>
+      </div>
+    </a>
+    {{> divider}} {{/each}} {{/with}}
+  </div>
 </main>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>

@@ -1,0 +1,104 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<main class="main">
+   {{> heading title= "Info about order"}}
+
+  <div class='purchase-list'>
+    {{#with data.purchases}} {{#each list}}
+      <div class='purchase-item'>
+        <div class='purchase-item__block'>
+          <span class='title'>ID: {{id}}</span>
+        </div>
+
+           {{> divider}}
+
+           <div style="display: grid; gap: 8px">
+
+        <div class="purchase-item__blockUser">
+          
+          {{>field label="Name" name="firstname"}}
+
+          {{>field label="Lastname" name="lastname"}}
+
+        </div>
+
+        <div class="purchase-item__blockUser">
+          
+          {{>field label="Phone" name="phone"}}
+
+          {{>field label="Email" name="email"}}
+
+        </div>
+
+        </div>
+
+         {{> divider}}
+
+         <div class="purchase-item__block">
+          
+        <div class='purchase-item__block'>
+          <span class='title'>Name product:</span>
+          <span>{{product}}</span>
+        </div>
+
+        <div class='purchase-item__block'>
+          <span class='title'>Comment:</span>
+          <span>call in 30 minutes</span>
+        </div>
+
+        </div>
+
+        {{>divider}}
+
+        <div class="purchase-item__block__Sale">
+
+        <div class="purchase-item__block">
+          
+        <div class='purchase-item__block'>
+          <span class='title'>Product prices:</span>
+          <span>{{totalPrice}}</span>
+        </div>
+
+        <div class='purchase-item__block'>
+          <span class='title'>Sum:</span>
+          <span>{{totalPrice}}</span>
+        </div>
+
+        </div>
+
+        <div class="purchase-item__block">
+          
+        <div class='purchase-item__block'>
+          <span class='title'>Delivery price:</span>
+          <span>{{delivery}}</span>
+        </div>
+
+        <div class='purchase-item__block'>
+          <span class='title'>Bonus:</span>
+          <span>{{bonus}}</span>
+        </div>
+
+        </div>
+
+        </div>
+
+        {{> divider}}
+        
+
+          <a href="purchase-product-change?id={{id}}">{{>long-button text="Change data"}}</a>
+
+        
+
+      </div>
+     {{/each}} {{/with}}
+  </div>
+  
+
+</main>
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
