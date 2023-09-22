@@ -24,6 +24,10 @@ class Track {
   static getList() {
     return this.#list.reverse()
   }
+
+  static getById(id) {
+    return this.#list.find((track) => track.id === id)
+  }
 }
 
 Track.create(
@@ -94,7 +98,14 @@ class Playlist {
     playlist.tracks.push(...randomTracks)
   }
 
-  static getById(id) {
+  static getId(id) {
+    return (
+      Playlist.#list.find((playlist) => playlist.id === id)
+        .id || null
+    )
+  }
+
+  static getPlaylistById(id) {
     return (
       Playlist.#list.find(
         (playlist) => playlist.id === id,
@@ -231,7 +242,7 @@ router.post('/spotify-create', function (req, res) {
 router.get('/spotify-playlist', function (req, res) {
   const id = Number(req.query.id)
 
-  const playlist = Playlist.getById(id)
+  const playlist = Playlist.getId(id)
 
   if (!playlist) {
     return res.render('alert', {
@@ -260,7 +271,7 @@ router.get('/spotify-track-delete', function (req, res) {
   const playlistId = Number(req.query.playlistId)
   const trackId = Number(req.query.trackId)
 
-  const playlist = Playlist.getById(playlistId)
+  const playlist = Playlist.getPlaylistById(playlistId)
 
   if (!playlist) {
     return res.render('alert', {
@@ -327,7 +338,9 @@ router.post('/spotify-search', function (req, res) {
 router.get('/spotify-add', function (req, res) {
   const playlistId = Number(req.query.playlistId)
 
-  const playlist = Playlist.getById(playlistId)
+  const playlist = Playlist.getId(playlistId)
+
+  console.log(playlistId)
 
   res.render('spotify-add', {
     style: 'spotify-add',
@@ -344,7 +357,20 @@ router.get('/spotify-track-add', function (req, res) {
   const playlistId = Number(req.query.playlistId)
   const trackId = Number(req.query.trackId)
 
-  const playlist = Playlist.getById(playlistId)
+  const playlist = Playlist.getPlaylistById(playlistId)
+
+  console.log(playlistId)
+
+  if (!playlist) {
+    return res.render('alert', {
+      style: 'alert',
+      data: {
+        message: 'Error',
+        info: `This playlist undefined ${playlistId} ${trackId}`,
+        link: `/spotify-playlist?id=${playlistId}`,
+      },
+    })
+  }
 
   playlist.addTrackById(trackId)
 

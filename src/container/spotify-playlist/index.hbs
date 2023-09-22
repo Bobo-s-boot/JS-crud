@@ -4,34 +4,36 @@
  }}
 
 <main class='main'>
-{{#with data}}
-  <div class='main__content'>
-    <h1 class='title title--center'>{{name}}</h1>
+  {{#with data}}
+    <div class='main__content'>
+      <h1 class='title title--center'>{{name}}</h1>
 
-    <a href='/spotify-add?playlistId={{../playlistId}}' class='add-button'>
-      <img src='/svg/add_button.svg' />
-      Add to playlist
-    </a>
+      <a
+        href='/spotify-add?playlistId={{playlistId}}'
+        class='add-button'
+      >
+        <img src='/svg/add_button.svg' />
+        Add to playlist
+      </a>
 
-    <ul class='track-list'>
-      {{#each tracks}}
-        <li class='track'>
-          <img
-            src='{{image}}'
-          />
-          <div class='track__content'>
-            <strong class='track__name'>{{name}}</strong>
-            <em class='track__author'>{{author}}</em>
-          </div>
-           <a href="/spotify-track-delete?playlistId={{../playlistId}}&trackId={{id}}">
-            <img src="/svg/delete_button.svg">
-           </a>
-        </li>
-      {{/each}}
-    </ul>
-
-  </div>
-{{/with}}
+      <ul class='track-list'>
+        {{#each tracks}}
+          <li class='track'>
+            <img src='{{image}}' />
+            <div class='track__content'>
+              <strong class='track__name'>{{name}}</strong>
+              <em class='track__author'>{{author}}</em>
+            </div>
+            <a
+              href='/spotify-track-delete?playlistId={{../playlistId}}&trackId={{id}}'
+            >
+              <img src='/svg/delete_button.svg' />
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/with}}
 </main>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
