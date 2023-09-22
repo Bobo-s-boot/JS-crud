@@ -1,0 +1,75 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../lib/spotify.scss' as spotify;
+
+.card-spoti {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  align-self: stretch;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 354px 1fr;
+  gap: s.space(2) s.space(2);
+  align-content: flex-start;
+  align-items: stretch;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: s.space(5);
+}
+
+.cart-description {
+  color: #fff;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.cart-img {
+  display: flex;
+  width: 249px;
+  height: 270px;
+  padding: 78px 68px 73px 65px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #4531f2 0.5%,
+    #cef4e7 100%
+  );
+  transition: opacity 0.6s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.cart--black {
+  background: #242424;
+}
+
+.cart--waite {
+  background: url(<path-to-image>),
+    lightgray 50% / cover no-repeat;
+}
+
+.cart--brown {
+  background: #2d1f16;
+}
+
+.list-amount {
+  display: flex;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 400;
+}

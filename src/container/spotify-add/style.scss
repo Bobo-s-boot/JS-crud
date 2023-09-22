@@ -1,0 +1,31 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../lib/spotify.scss' as spotify;
+
+* {
+  background-color: black;
+}
+
+.track-list {
+  background: #282828;
+}
+
+.track {
+  background: #282828;
+}
+
+.track__name {
+  background: #282828;
+}
+
+.track__author {
+  background: #282828;
+}
+
+.track__content {
+  background: #282828;
+}
+
+.svg__add {
+  background: #282828;
+}

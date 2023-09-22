@@ -1,0 +1,81 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<main class='main'>
+  {{#with data}}
+    <div class='main__content'>
+      <header class='header'>
+        <h1 class='title'>My libery</h1>
+        <div class='svg__space'>
+          <a href='/spotify-search'>
+            <img src='/svg/spotify-search.svg' />
+          </a>
+          <a href='/spotify-choose'>
+            <img src='/svg/spotify-plus.svg' alt='' />
+          </a>
+        </div>
+      </header>
+
+      <div class='card-spoti'>
+        <div class='cards'>
+          {{#each list1}}
+            <ul class='cart'>
+              <li class='desc'>
+                <img src='{{img}}' class='cart-img' />
+                <p class='cart-description'>{{name}}</p>
+                <span class='list-amount'>{{amount}}</span>
+              </li>
+            </ul>
+          {{/each}}
+
+          {{#each list2}}
+            <ul class='cart'>
+              <li class='desc'>
+                <img
+                  src='{{img}}'
+                  class='cart-img cart--brown'
+                />
+                <p class='cart-description'>{{name}}</p>
+                <span class='list-amount'>{{amount}}</span>
+              </li>
+            </ul>
+          {{/each}}
+
+          {{#each list3}}
+            <ul class='cart'>
+              <li class='desc'>
+                <img
+                  src='{{img}}'
+                  class='cart-img cart--waite'
+                />
+                <p class='cart-description'>{{name}}</p>
+                <span class='list-amount'>{{amount}}</span>
+              </li>
+            </ul>
+          {{/each}}
+
+          {{#each list4}}
+            <ul class='cart'>
+              <li class='desc'>
+                <img
+                  src='{{img}}'
+                  class='cart-img cart--black'
+                />
+                <p class='cart-description'>{{name}}</p>
+                <span class='list-amount'>{{amount}}</span>
+              </li>
+            </ul>
+          {{/each}}
+        </div>
+
+      </div>
+
+    </div>
+  {{/with}}
+</main>
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}

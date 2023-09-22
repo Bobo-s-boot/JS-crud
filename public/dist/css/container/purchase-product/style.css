@@ -36,6 +36,7 @@
 
 .product-card__subtitle {
   font-size: 16px;
+  color: #bdbdbd;
 }
 
 .product-card__category {
@@ -151,6 +152,7 @@
 
 .product-info__subtitle {
   font-size: 16px;
+  color: #bdbdbd;
 }
 
 .product-info__category {
